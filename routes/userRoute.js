@@ -95,7 +95,7 @@ access : private - login
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     //files khi upload xong sẽ nằm trong thư mục "uploads" này - các bạn có thể tự định nghĩa thư mục này
-    cb(null, __dirname);
+    cb(null, "/public/images");
   },
   filename: function (req, file, cb) {
     // tạo tên file = thời gian hiện tại nối với số ngẫu nhiên => tên file chắc chắn không bị trùng
