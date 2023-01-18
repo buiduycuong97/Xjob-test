@@ -6,6 +6,7 @@ var logger = require("morgan");
 const errorHandle = require("./middlewares/errorMiddleware");
 const connectDB = require("./config/db");
 const cors = require("cors");
+const fs = require("fs-extra");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/userRoute");
@@ -14,6 +15,7 @@ var adminRouter = require("./routes/adminRoute");
 
 var app = express();
 app.use(cors());
+fs.ensureDir(__dirname + "/public/images", (err) => console.log(err));
 
 // connect database
 connectDB.getInstance();
